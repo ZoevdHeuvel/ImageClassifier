@@ -1,6 +1,14 @@
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
+from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import InteractiveSession
+
+
+# def fix_gpu():
+#     physical_devices = tf.config.experimental.list_physical_devices('GPU')
+#     print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+#     tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 def model():
     test_dir = r"C:\Users\zoepa\PycharmProjects\CarsClassifier\Cars Dataset\Test"
@@ -51,5 +59,6 @@ def model():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    # fix_gpu()
     model()
 
