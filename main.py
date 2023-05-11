@@ -55,7 +55,7 @@ def model():
     history = model.fit(
         train_generator,
         steps_per_epoch=train_generator.samples / train_generator.batch_size,
-        epochs=1,
+        epochs=3,
         validation_data=test_generator,
         validation_steps=test_generator.samples / test_generator.batch_size,
         verbose=1)
@@ -64,6 +64,8 @@ def model():
     val_acc = history.history['val_accuracy']
     loss = history.history['loss']
     val_loss = history.history['val_loss']
+    print(val_loss)
+    print(loss)
 
     epochs = range(len(acc))
 
