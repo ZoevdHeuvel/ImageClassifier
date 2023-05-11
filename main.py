@@ -55,7 +55,7 @@ def model():
     history = model.fit(
         train_generator,
         steps_per_epoch=train_generator.samples / train_generator.batch_size,
-        epochs=3,
+        epochs=10,
         validation_data=test_generator,
         validation_steps=test_generator.samples / test_generator.batch_size,
         verbose=1)
@@ -68,6 +68,8 @@ def model():
     print(loss)
 
     epochs = range(len(acc))
+
+    model.save('model.h5')
 
     plt.plot(epochs, acc, 'r', label='Training accuracy')
     plt.plot(epochs, val_acc, 'b', label='Validation accuracy')
